@@ -1,8 +1,4 @@
-/*
- * Autor: Eduard Wayz
- */
-
-
+// Autor: Eduard Wayz
 
 public class MehrwertsteuerCent {
 
