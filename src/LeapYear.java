@@ -8,7 +8,6 @@ public class LeapYear {
 
         // Prüft, ob es durch 400 teilbar ist. Wenn nicht, prüft es ob es durch 4, aber nicht durch 100 teilbar ist.
         // Wenn die Bindingung auch nicht erfültt ist, wird kein Schaltjahr ausgeben.
-
         if (yearInput % 400 == 0) {
             System.out.println("Das Jahr " + yearInput + " ist ein Schaltjahr.");
         } else if ((yearInput % 4 == 0) && ((yearInput % 100) != 0)) {
