@@ -2,6 +2,7 @@
 
 public class RollerCoaster {
     public static void main(String[] args) {
+
         // Frägt nach Eingabe und Speicherung von Alter, Größe und in Begleitung
         int age = In.readInteger("Alter: ");
         int heightInCm = In.readInteger("Größe in cm: ");
