@@ -7,7 +7,7 @@ public class Schachbrett {
         // Einstellen der Variablen:
         // k ist die Größe des einzelnen Quadratfeldes
         // c ist das Verwendete Zeichen
-        int k = 7;
+        int k = 4;
         char c = '*';
 
         for (int i = 0; i < 4; i++) {
@@ -28,18 +28,18 @@ public class Schachbrett {
 
     static void quadratStartWithChar(int k, char c) {
             for (int j = 0; j < k; j++) {
-                System.out.print(c + "  ");
+                System.out.print(c + " ");
             }
             for (int j = 0; j < k; j++) {
-                System.out.print("   ");
+                System.out.print("  ");
             }
     }
     static void quadratStartWithSpace(int k, char c) {
             for (int j = 0; j < k; j++) {
-                System.out.print("   ");
+                System.out.print("  ");
             }
             for (int j = 0; j < k; j++) {
-                System.out.print(c + "  ");
+                System.out.print(c + " ");
             }
     }
 }
