@@ -5,6 +5,9 @@
 public class Schachbrett {
     static final int k = 4;
     static final char c = '*';
+    // Bei folgenden Konstanten stimmt die Anzahl an Leerzeichen beim MacBook, um Quadrate zu erzeugen, 
+    // am iPad brauche ich jedoch jeweils ein Leerzeichen weniger. Um das flexibel anpassen zu können, 
+    // habe ich das in Konstanten gespeichert. 
     static final String CHARWITHSPACE = c + "  ";
     static final String SPACE = "   ";
 
