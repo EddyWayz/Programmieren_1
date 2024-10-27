@@ -12,7 +12,8 @@ public class Methoden{
       System.out.println(quersumme(i));
     }
   }
-
+  // Folgende Methode bekommt einen int n, potenziert diese mit 3 und gibt die Zahl als long aus.
+  // Datentyp long, weil die Zahlen sehr groß werden können.
   static long calculateCubicNumber(int n){
     return n*n*n;
   }
