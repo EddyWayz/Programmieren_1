@@ -1,7 +1,12 @@
-//@author: Eduard Wayz
-
+/**
+* Die Klasse DateChecker ist im Stande, ein eingegebenes Datum auf Gültigkeit zu überprüfen. 
+ * @author Eduard Wayz
+ * @version 1.0
+ */
+ 
 public class DateChecker {
   public static void main(String[] args){
+      // Eingabe von Tag, Monat und Jahr des zu überprüfenden Datums
       int day = In.readInt("Bitte geben Sie hier den Tag des zu prüfenden Tags ein: ");
       int month = In.readInt( "Bitte geben Sie hier den Monat des zu prüfenden Tags ein: ");
       int year = In.readInt( "Bitte geben Sie hier das Jahr des zu prüfenden Tags ein: ");
@@ -30,37 +35,19 @@ public class DateChecker {
    * @return die Anzahl der Tage des eigegeben Monats. (int)
    */
   static int numberOfDays(int month, int year) {
-      switch (month) {
-          case 1:
-              return 31;
-          case 2:
+      switch (month) { // break; nicht notwenig, da Funktion nach einem return beendet ist. 
+          case 2: 
               if (isLeapYear(year)) {
                   return 29;
               } else {
-                  return 28;
+                  return 28; 
               }
-          case 3:
-              return 31;
-          case 4:
-              return 30;
-          case 5:
-              return 31;
-          case 6:
-              return 30;
-          case 7:
-              return 31;
-          case 8:
-              return 31;
-          case 9:
-              return 30;
-          case 10:
-              return 31;
-          case 11:
-              return 30;
-          case 12:
-              return 31;
+          case 1,3,5,7,8,10,12: 
+              return 31; 
+          case 4,6,9,11:
+              return 30; 
           default:
-              return -99; //Fehlerhafte Eingabe!
+            return -99; //Fehlerhafte Eingabe!
       }
   }
 /**

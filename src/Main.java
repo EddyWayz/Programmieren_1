@@ -2,6 +2,6 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args){
-            Collatz.main(args);
+            System.out.println(DateChecker.numberOfDays(2,1900));
     }
 }

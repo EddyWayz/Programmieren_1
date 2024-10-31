@@ -1,4 +1,9 @@
-//@author: Eduard Wayz
+/**
+ * Folgende Classe enthählt verschiedene Methoden, die unterschiedliche Rechenoperationen durchführen. 
+ * Die Main-Methode enthält ein Beispiel für die Verwendung der Methoden.
+ * @author Eduard Wayz
+ * @version 1.0
+ */ 
 
 public class Methoden {
   public static void main(String[] args) {
