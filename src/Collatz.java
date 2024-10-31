@@ -5,7 +5,7 @@ public class Collatz {
         // Long Variablen n und zaehler werden erstellt.
         // Datentyp long wird benötigt, weil die Zahlen, aber auch die Zahlenfolge über den Speicher von Integer hinaus gehen können.  
         long n;
-        long zaehler = 1;
+        long zaehler = 0;
 
         // Frägt und überprüft, ob eine Zahl größer 1 eingegeben wird.
         do {
@@ -20,9 +20,9 @@ public class Collatz {
         // wenn zaehler > 500 ist.  
         // Sonst wird unter der 1 noch die Länge der Folge geprintet. 
         while (n > 1) {
-            System.out.println(n);
+            System.out.println(n + " " +zaehler);
             zaehler++;
-            if (zaehler > 500) {
+            if (zaehler > 2) {
                 break;
             }
             if ((n % 2) == 0) {
@@ -32,7 +32,7 @@ public class Collatz {
             }
         }
         
-        if (zaehler == 501) {
+        if (zaehler == 3) {
             System.out.println("Die Folge wurde unterbrochen, weil die Folge jetzt länger als 500 ist.");
         } else {
             System.out.println(n);
