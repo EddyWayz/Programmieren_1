@@ -20,18 +20,18 @@ public class Collatz {
         // wenn zaehler > 500 ist.  
         // Sonst wird unter der 1 noch die Länge der Folge geprintet. 
         while (n > 1) {
-            System.out.println(n + " " +zaehler);
+            System.out.println(n);
             zaehler++;
-            if (zaehler > 2) {
+            if (zaehler > 500) {
                 break;
             }
             if ((n % 2) == 0) {
                 n = n / 2;
-            } else if ((n % 2) != 0) {
+            } else {
                 n = 3 * n + 1;
             }
         }
-        
+
         if (zaehler == 501) {
             System.out.println("Die Folge wurde unterbrochen, weil die Folge jetzt länger als 500 ist.");
         } else {

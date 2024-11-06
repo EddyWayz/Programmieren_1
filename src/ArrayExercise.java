@@ -39,7 +39,7 @@ public class ArrayExercise {
 
         // (d)
         for (int i = 0; i < intArray.length-1; i++) {
-            intArray[i] = intArray[i+1];;
+            intArray[i] = intArray[i+1];
         }
         intArray[intArray.length-1] = 16;
 
