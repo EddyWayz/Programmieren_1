@@ -36,7 +36,7 @@ public class Collatz {
             System.out.println("Die Folge wurde unterbrochen, weil die Folge jetzt länger als 500 ist.");
         } else {
             System.out.println(n);
-            System.out.println("Die Länge der Folge ist: " + zaehler);
+            System.out.println("Die Länge der Folge ist: " + (zaehler + 1));
 
         }
     }
