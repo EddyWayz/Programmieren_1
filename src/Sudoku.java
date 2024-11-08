@@ -1,6 +1,7 @@
 /**
 * Die Klasse Sudoku erstellt ein lösbares Sudoku.
-* 
+* @author Eduard Wayz (193123)
+* @version 1.0
 */
 
 public class Sudoku {

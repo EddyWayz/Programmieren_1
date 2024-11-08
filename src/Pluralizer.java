@@ -1,4 +1,6 @@
-//@author: Eduard Wayz
+/**
+ * @author: Eduard Wayz
+*/
 
 public class Pluralizer {
     public static void main(String[] args) {

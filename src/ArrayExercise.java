@@ -13,7 +13,12 @@ public class ArrayExercise {
             System.out.print(i + " ");
         }
         System.out.println();
-
+        int geradeZahl = 16;
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = geradeZahl;
+            geradeZahl -= 2;
+        }
+        
         // (b) Befüllt das Array von links nach rechts mit allen geraden Zahlen von 17 bis 1 und gibt die Werte aus.
         int ungeradeZahl = 18; // ungeradeZahl fängt bei 18 an, weil ich in der Schleife zuerst -2 rechne und der Index 0 16 sein muss.
         for (int i = 0; i < intArray.length; i++) {
@@ -28,7 +33,7 @@ public class ArrayExercise {
         }
         System.out.println();
 
-        // (c) Füllt die restlichen freien Plätze
+        // (c) Füllt die restlichen freien Plätze mit zufälligen Zahlen von 1 bis 20 auf und gibt das Array erneut aus. 
         for(int i = 8; i < intArray.length; i++) {
             intArray[i] = (int) (Math.random() * 20) + 1;
         }
@@ -37,18 +42,17 @@ public class ArrayExercise {
         }
         System.out.println();
 
-        // (d)
+        // (d) Ersetzt jede Zahl durch ihren rechten Nachbarn. Die Zahl ganz rechts soll durch den Wert der ursprüngliche ganz linken Zahl ersetzt werden. Zudem wird das Array wieder ausgegeben
         for (int i = 0; i < intArray.length-1; i++) {
             intArray[i] = intArray[i+1];
         }
-        intArray[intArray.length-1] = 16;
-
+        intArray[intArray.length-1] = 16; // Ersetzt die leutzte Zahl mit der ursprünglichen Ersten 
         for (int i : intArray) {
             System.out.print(i + " ");
         }
         System.out.println();
 
-        // (e)
+        // (e) Ermittelt die größte Zahl des Arrays und gibt diese mit der Position im Array aus
         int maxIndex = 0;
         for (int i = 1; i < intArray.length; i++) {
             if(intArray[i] > intArray[maxIndex]) {

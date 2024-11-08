@@ -3,7 +3,8 @@
  * - rollDie() simuliert einen Würfelwurf.
  * - rollDice(int n) simuliert das Werfen von n Würfel und gibt die Ergebnisse zurück.
  * - wuerfelBisZumPasch(int n) würfelt solange n Würfel bis alle Ergebnisse im Array gleich sind.  
- * Die main-Methode gibt nacheinander rollDice und wuerfelBisZumPasch mit den Parametern 2 bis 6 auf der Konsole aus.
+ * Die main-Methode gibt nacheinander rollDice und wuerfelBisZumPasch mit den Werten als Parametern 2 bis 6 auf der Konsole aus.
+ *
  * @author Eduard Wayz (193123)
  * @version 1.0
  */
@@ -29,7 +30,7 @@ public class Dice {
     }
 
     /**
-     * Folgende Methode simuliert das Werfen von n Würfel und gibt die Ergebnisse
+     * Die Methode simuliert das Werfen von n Würfel und gibt die Ergebnisse
      * gesammelt zurück.
      * 
      * @param n gibt die Anzahl der Würfe an. (int)
@@ -62,13 +63,13 @@ public class Dice {
         }
         // Erstellt und befüllt mithilfe von rollDice solange ein int[] bis alle Zahlen gleich sind. 
         // Dabei wird anzahlBenötigterWuerfe immer um eins erhöht und am Ende zurückgegeben. 
-        long anzahlBenötigterWuerfe = 1;
+        long anzahlBenoetigterWuerfe = 1;
         int[] zahlenArray = rollDice(n);
         while (!allEqual(zahlenArray)) {
             zahlenArray = rollDice(n);
-            anzahlBenötigterWuerfe++;
+                anzahlBenoetigterWuerfe++;
         }
-        return anzahlBenötigterWuerfe;
+        return anzahlBenoetigterWuerfe;
     }
 
     /**
