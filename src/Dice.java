@@ -1,8 +1,8 @@
 /**
- * Die Klasse Dice enthält folgende Methoden: 
+ * Die Klasse Dice enthält folgende Methoden:
  * - rollDie() simuliert einen Würfelwurf.
  * - rollDice(int n) simuliert das Werfen von n Würfel und gibt die Ergebnisse zurück.
- * - wuerfelBisZumPasch(int n) würfelt solange n Würfel bis alle Ergebnisse im Array gleich sind.  
+ * - wuerfelBisZumPasch(int n) würfelt solange n Würfel bis alle Ergebnisse im Array gleich sind.
  * Die main-Methode gibt nacheinander rollDice und wuerfelBisZumPasch mit den Werten als Parametern 2 bis 6 auf der Konsole aus.
  *
  * @author Eduard Wayz (193123)
@@ -14,15 +14,15 @@ public class Dice {
         for (int i = 2; i < 6; i++) {
             System.out.println(rollDice(i));
         }
-        
+
         for (int i = 2; i < 6; i++) {
-            System.out.println(wuerfelBisZumPasch(i)); 
+            System.out.println(wuerfelBisZumPasch(i));
         }
     }
 
     /**
      * Diese Methode simuliert einen Würfelwurf mit einem sechsseitigen Würfel
-     * 
+     *
      * @return eine ganzzahlige Zufallszahl von 1 bis 6.(int)
      */
     static int rollDie() {
@@ -32,7 +32,7 @@ public class Dice {
     /**
      * Die Methode simuliert das Werfen von n Würfel und gibt die Ergebnisse
      * gesammelt zurück.
-     * 
+     *
      * @param n gibt die Anzahl der Würfe an. (int)
      * @return int[] der länge n mit den gewürfelten Zahlen. (int[])
      */
@@ -52,7 +52,7 @@ public class Dice {
     /**
      * Die Methode würfelt mithilfe von rollDice(int n) so lange die Würfel, bis
      * alle Würfel des Arrays dieselbe Anzahl anzeigen (Pasch)
-     * 
+     *
      * @param n ist die Anzahl der zu vergleichenden Würfel-Ergebnisse.
      * @return anzahlBenötigterWuerfe - gibt die Anzahl der dabei benötigten Würfe an.
      */
@@ -67,14 +67,14 @@ public class Dice {
         int[] zahlenArray = rollDice(n);
         while (!allEqual(zahlenArray)) {
             zahlenArray = rollDice(n);
-                anzahlBenoetigterWuerfe++;
+            anzahlBenoetigterWuerfe++;
         }
         return anzahlBenoetigterWuerfe;
     }
 
     /**
      * Diese Methode überprüft ob alle Zahlen eines übergebenen int[] gleich sind
-     * 
+     *
      * @param zahlen ist das zu überprüfende int[] (int[])
      * @return true, wenn alle Zahlen im Array gleich sind, sonst false.
      */
