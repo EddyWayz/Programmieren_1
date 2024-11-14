@@ -137,5 +137,7 @@ public class Sudoku {
     return false; 
     }
 
-    
+    static boolean conflictInSquare(int[][] grid, int row, int col){
+        return true; 
+    }
 }
