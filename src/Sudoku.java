@@ -1,5 +1,5 @@
 /**
- * Die Klasse Sudoku erstellt ein lösbares Sudoku.
+ * Die Klasse Sudoku erstellt ein loesbares Sudoku.
  *
  * @author Eduard Wayz (193123)
  * @version 1.0
@@ -13,7 +13,7 @@ public class Sudoku {
         System.out.println("Leeres Sudoku: ");
         showSudoku(grid);
 
-        // Befüllt Sudoku mit Werten eines echten Sudokus und gibt es auf der Konsole aus.
+        // Befuellt Sudoku mit Werten eines echten Sudokus und gibt es auf der Konsole aus.
         insert(grid, 0, 1, 3);
         insert(grid, 0, 7, 7);
         insert(grid, 1, 3, 5);
@@ -32,16 +32,15 @@ public class Sudoku {
         insert(grid, 7, 5, 6);
         insert(grid, 7, 6, 3);
         insert(grid, 8, 7, 4);
-        System.out.println("\nEin echtes, lösbares Sudoku: ");
+        insert(grid, 0, 0, 2);
+        System.out.println("\nEin echtes, loesbares Sudoku: ");
         showSudoku(grid);
-        System.out.println(conflictInRow(grid, 5,3));
-        System.out.println(conflictInCol(grid, 5,3));
-        
+        System.out.println(isConflict(grid, 6, 0));
     }
 
     /**
-     * Zeigt das übergebene Gitter auf der Konsole aus.
-     * Wagerechte Trennlinien sind über die Konstante dividingLines anpassbar.
+     * Zeigt das uebergebene Gitter auf der Konsole aus.
+     * Wagerechte Trennlinien sind ueber die Konstante dividingLines anpassbar.
      *
      * @param grid ist das auszugebende Gitter. (int[][])
      */
@@ -70,13 +69,14 @@ public class Sudoku {
         }
     }
 
-    static boolean correctInput(int row, int col, int num){
+    static boolean correctInput(int row, int col, int num) {
         if ((row < 0) || (row > 8) || (col < 0) || (col > 8) || (num < 1) || (num > 9)) {
             return false;
         } else {
             return true;
-        }  
+        }
     }
+
     /**
      * Diese Funktion schreibt eine Zahl von 1 bis 9 in ein bestimmtes Feld des Sudokus.
      *
@@ -93,51 +93,81 @@ public class Sudoku {
     }
 
     /**
-    * Diese Funktion prüft auf Konflikt in der Reihe der eingegeben Reihe.
-    *
-    * @param ist das zweidimensionale Gitter des Sudokus. (int[][])
-    * @param row ist die zu ueberpruefenden Reihe. (int)
-    * @param col ist die Spalte der Zahl steht, auf die die Reihe überprueft werden soll. (int)
-    * return true, wenn Konflikt in der Reihe ist. False, wenn kein Konflikt in der Rehe ist, wenn das Feld leer ist oder wenn Ungueltige Werte für row oder col eingegeben wurden. (boolean) 
-    */
+     * Diese Funktion prueft auf Konflikt in der Reihe der eingegeben Reihe.
+     *
+     * @param grid ist das zweidimensionale Gitter des Sudokus. (int[][])
+     * @param row ist die zu ueberpruefenden Reihe. (int)
+     * @param col ist die Spalte der Zahl steht, auf die die Reihe ueberprueft werden soll. (int)
+     *            return true, wenn Konflikt in der Reihe ist. False, wenn kein Konflikt in der Reihe ist, wenn das Feld leer ist oder wenn Ungueltige Werte fuer row oder col eingegeben wurden. (boolean)
+     */
     static boolean conflictInRow(int[][] grid, int row, int col) {
-            if(!correctInput(row, col, grid[row][col])){
-                return false;
-            }
-
-        int number = grid[row][col];
-        for(int i = 0; i<grid.length;i++){
-            if((grid[i][col] == number) && (i != row)){
-                return true; 
-            }
-        }
-        return false; 
-        }   
-
-
-    /**
-    * Diese Funktion prüft auf Spaltenkonflikt der eingegeben Spalte.
-    *
-    * @param ist das zweidimensionale Gitter des Sudokus. (int[][])
-    * @param row ist die Reihe der Zahl steht, auf die die Spalte überprueft werden soll. (int)
-    * @param col ist die zu ueberpruefenden Spalte. (int)
-    * return true, wenn Konflikt in der Spalte ist. False, wenn kein Konflikt in der Spalte ist, wenn das Feld leer ist oder wenn Ungueltige Werte für row oder col eingegeben wurden. (boolean)
-    */
-    static boolean conflictInCol(int[][] grid, int row, int col) {
-        if(!correctInput(row, col, grid[row][col])){
+        if (!correctInput(row, col, grid[row][col])) {
             return false;
         }
 
-    int number = grid[row][col];
-    for(int i = 0; i<grid.length;i++){
-        if((grid[row][i] == number) && (i != col)){
-            return true; 
+        int number = grid[row][col];
+        for (int i = 0; i < grid.length; i++) {
+            if ((grid[i][col] == number) && (i != row)) {
+                return true;
+            }
         }
-    }
-    return false; 
+        return false;
     }
 
-    static boolean conflictInSquare(int[][] grid, int row, int col){
-        return true; 
+
+    /**
+     * Diese Funktion prueft auf Spaltenkonflikt der eingegeben Spalte.
+     *
+     * @param grid ist das zweidimensionale Gitter des Sudokus. (int[][])
+     * @param row ist die Reihe der Zahl steht, auf die die Spalte ueberprueft werden soll. (int)
+     * @param col ist die zu ueberpruefenden Spalte. (int)
+     *            return true, wenn Konflikt in der Spalte ist. False, wenn kein Konflikt in der Spalte ist, wenn das Feld leer ist oder wenn Ungueltige Werte fuer row oder col eingegeben wurden. (boolean)
+     */
+    static boolean conflictInCol(int[][] grid, int row, int col) {
+        if (!correctInput(row, col, grid[row][col])) {
+            return false;
+        }
+
+        int number = grid[row][col];
+        for (int i = 0; i < grid.length; i++) {
+            if ((grid[row][i] == number) && (i != col)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    static boolean conflictInSquare(int[][] grid, int row, int col) {
+        if (correctInput(row, col, grid[row][col])) { // 1 als num, damit es nicht wegen der 0 im Array false ausgibt.
+            int number = grid[row][col];
+
+            // Ermittelt die Koordinaten des Feldes links oben von dem jeweiligen 3x3 Feld.
+            int tmpRow = row - (row % 3);
+            int tmpCol = col - (col % 3);
+            for (int i = tmpRow; i < tmpRow + 3; i++) {
+                for (int j = tmpCol; j < tmpCol + 3; j++) {
+                    if ((grid[i][j] == number) && (i != row) && (j != col)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Ueberprueft das uebergebene Feld(row, col) auf mindestens einen Konflikt.
+     *
+     * @param grid ist das zweidimensionale Gitter des Sudokus. (int[][])
+     * @param row ist die Reihe des einzugebenen Feldes. (int)
+     * @param col ist die Spalte des einzugebenen Feldes. (int)
+     * @return true, wenn mindestens ein Reihen- oder Spaltenkonflikt besteht oder wenn das 3x3 Feld des eingegebenen Feldes einen Konflikt beinhaelt. Sonst false. (boolean)
+     */
+    static boolean isConflict(int[][] grid, int row, int col) {
+        if (conflictInRow(grid, row, col) || conflictInCol(grid, row, col) || conflictInSquare(grid, row, col)) {
+            return true;
+        }
+        return false;
     }
 }
