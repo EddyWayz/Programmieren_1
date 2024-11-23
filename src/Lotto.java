@@ -25,7 +25,7 @@ public class Lotto {
             do {
                 tmpNumber = drawOneNumber();
                 lotteryNumbers[i] = tmpNumber;
-            } while (checkForSimilar(lotteryNumbers,tmpNumber, i));
+            } while (checkForSimilar(lotteryNumbers,tmpNumber, i, false));
         }
         System.out.println(Arrays.toString(lotteryNumbers));
         return lotteryNumbers;
@@ -38,9 +38,12 @@ public class Lotto {
      * @param index ist das Index bis zu welchem die Zahl auf ein Vorkommen ueberprueft werden soll. (int)
      * @return true, wenn n schon einmal im Array vorkommt.
      */
-    static boolean checkForSimilar(int[] numbers, int n, int index){
+    static boolean checkForSimilar(int[] numbers, int n, int index, boolean withErrorMessage){
         for (int i = 0; i < index; i++) {
             if(numbers[i] == n){
+                if(withErrorMessage){
+                    System.out.println("\nDie Zahl " + n +" kam schon einmal vor. Geben Sie bitte eine neue Zahl ein.\n");
+                }
                 return true;
             }
         }
@@ -53,9 +56,9 @@ public class Lotto {
         for (int i = 0; i < eingabeArray.length; i++) {
             do {
                 n = In.readInt("Geben Sie eine Zahl von 1 bis 49 ein: ");
-            } while (checkForSimilar(eingabeArray,n,i));
+            } while (checkForSimilar(eingabeArray,n,i, true));
             eingabeArray[i] = n;
-            System.out.println(Arrays.toString(eingabeArray));
+            // System.out.println(Arrays.toString(eingabeArray));
         }
         return eingabeArray;
     }
