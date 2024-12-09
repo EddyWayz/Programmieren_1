@@ -20,17 +20,17 @@ public class DateApplication {
     Date date4 = new Date(29,2,1900);
     Date date5 = new Date(31,12,1999);
     Date birthdayDate = new Date(11,11,2005);
-    System.out.println("Date 1: " + date1.toString());
-    System.out.println("Date 2: " + date2.toString());
-    System.out.println("Date 3: " + date3.toString());
-    System.out.println("Date 4: " + date4.toString());
-    System.out.println("Date 5: " + date5.toString());
-    System.out.println("Birthday date: " + birthdayDate.toString());
+    System.out.println("Date 1: " + date1);
+    System.out.println("Date 2: " + date2);
+    System.out.println("Date 3: " + date3);
+    System.out.println("Date 4: " + date4);
+    System.out.println("Date 5: " + date5);
+    System.out.println("Birthday date: " + birthdayDate);
     Date copy = new Date(date5);
-    System.out.println("Copy of date 5: " + copy.toString());
+    System.out.println("Copy of date 5: " + copy);
     System.out.println("The object 'copy' and the object with the date '31.12.1999' are really the same: " + copy.isEquals(date5));
     Date newYearsDay = copy.nextDay(); 
-    System.out.println("The day after 'copy': " + newYearsDay.toString());
+    System.out.println("The day after 'copy': " + newYearsDay);
 
     // bonus-task
     Date currentDate = new Date(3,12,2024); // I've taked the date of the next tuesday because of a possible presentation.

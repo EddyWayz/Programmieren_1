@@ -260,6 +260,7 @@ public class Date {
         h = (q + ((13 * (m + 1)) / 5) + k + (k / 4) + (j / 4) - 2 * j) % 7;
 
         switch (h) {
+
             case 0:
                 return "Saturday";
             case 1:

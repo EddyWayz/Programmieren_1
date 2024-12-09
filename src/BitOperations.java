@@ -15,7 +15,7 @@ public class BitOperations {
     }
 
     /**
-     * List das Bit Nr. 11 (gezaelt von rechts, bei 0 beginnend) einer uebergeben int-Zahl aus und printet es auf die Konsole.
+     * Liest das Bit Nr. 11 (gezaelt von rechts, bei 0 beginnend) einer uebergeben int-Zahl aus und printet es auf die Konsole.
      *
      * @param num ist die zu uebergebene int zahl. (int)
      */
@@ -33,7 +33,6 @@ public class BitOperations {
         } else {
             System.out.println("Fehler: k ist nicht zwischen 0 und 31");
         }
-
     }
 
     /**
