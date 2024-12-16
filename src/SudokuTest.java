@@ -1,22 +1,44 @@
 /**
+ * A test class for the {@link SudokuGame} class.
+ * It demonstrates setting fixed values, attempting to insert numbers,
+ * and printing the Sudoku grid.
+ *
  * @author Eduard Wayz (193123)
  * @version 1.0
  */
 public class SudokuTest {
+    /**
+     * The main method to run the Sudoku game test.
+     * It sets initial values, tries to insert numbers into each cell,
+     * and displays the resulting Sudoku grid.
+     *
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
-        SudokuField field1 = new SudokuField(0,false); // Estelle eine neue Instanz Feld 1 vom Typ SodukoField mit value == 0 und fixed == false.
-        System.out.println("Nachdem ich Feld 1 erzeugt habe, ist der Wert von Feld 1 '" + field1.getValue() + "' und das Feld ist fest: " + field1.isFixed());
-        field1.setValue(2); // Setze value von field1 auf 2;
-        System.out.println("Nachdem ich versucht habe, den Wert von Feld 1 zu veraendern, ist der Wert von Feld 1: '" + field1.getValue() + "' und das Feld ist leer: " + field1.isEmpty());
-        field1.clear(); // Setze value von field1 wieder auf 0 (leer)
-        System.out.println("Nachdem ich versucht habe, den Wert von Feld 1 zu leeren, ist der Wert von Feld 1 '" + field1.getValue() + "' und das Feld ist leer: " + field1.isEmpty());
+        /** Create a new Sudoku game instance. */
+        SudokuGame sudoku = new SudokuGame();
 
-        SudokuField field2 = new SudokuField(2,true); // Estelle eine neue Instanz Feld 2 vom Typ SodukoField mit value == 2 und fixed == true.
-        System.out.println("\nNachdem ich Feld 2 erzeugt habe, ist der Wert von Feld 2 '" + field2.getValue() + "' und das Feld ist fest: " + field2.isFixed());
-        field2.setValue(4); // Versuche value von field2 auf 4 zu setzen
-        System.out.println("Nachdem ich versucht habe, den Wert von Feld 2 zu veraendern, ist der Wert von Feld 2: '" + field2.getValue() + "' und das Feld ist leer: " + field2.isEmpty());
-        field2.clear(); // Versuche value von field2 auf 0 zu setzen (leer)
-        System.out.println("Nachdem ich versucht habe, den Wert von Feld 2 zu leeren, ist der Wert von Feld 2 '" + field2.getValue() + "' und das Feld ist leer: " + field2.isEmpty());
-        System.out.println("\nFazit: Dadurch, dass Feld 2 fest ist, kann man die Werte, im Gegensatz zu Feld 1, nicht aendern.");
+        sudoku.setStartValue(0,0,9);
+        sudoku.setStartValue(0,1,7);
+        sudoku.setStartValue(0,2,5);
+        sudoku.setStartValue(0,3,3);
+        sudoku.setStartValue(0,4,1);
+
+        // Attempt to insert a value into a fixed field to check immutability.
+        sudoku.insert(0,0,4); // Should not change the fixed value.
+
+        // Attempt to insert the lowest value into every field from the top-left corner to the bottom-right corner.
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+                int zahl = 0;    // Initialize with 0 so the loop starts correctly.
+                boolean success;
+
+                do {
+                    zahl++;
+                    success = sudoku.tryNumber(row, col, zahl);
+                } while (!success && zahl <= 9);
+            }
+        }
+        sudoku.showSudoku();
     }
 }

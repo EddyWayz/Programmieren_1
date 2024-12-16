@@ -122,7 +122,7 @@ public class Sudoku {
      * @param col  ist die zu überprüfende Spalte. (int)
      * @return true, wenn ein Konflikt in der Spalte vorliegt; false, wenn nicht.
      */
-    static boolean conflictInCol(int[][] grid, int row, int col) {
+    static boolean conflictInColumn(int[][] grid, int row, int col) {
         if (!correctInput(row, col, grid[row][col])) {
             return false; // Gibt false zurück, wenn die Eingabe ungültig ist.
         } else if(grid[row][col] == 0) {
@@ -173,7 +173,7 @@ public class Sudoku {
      * @return true, wenn mindestens ein Reihen- oder Spaltenkonflikt besteht oder wenn das 3x3 Feld des eingegebenen Feldes einen Konflikt beinhaltet; sonst false.
      */
     static boolean isConflict(int[][] grid, int row, int col) {
-        if (conflictInRow(grid, row, col) || conflictInCol(grid, row, col) || conflictInSquare(grid, row, col)) {
+        if (conflictInRow(grid, row, col) || conflictInColumn(grid, row, col) || conflictInSquare(grid, row, col)) {
             return true; // Gibt true zurück, wenn ein Konflikt in der Reihe, Spalte oder 3x3 Quadrat vorliegt.
         }
         return false; // Gibt false zurück, wenn kein Konflikt vorliegt.

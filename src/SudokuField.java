@@ -2,66 +2,82 @@
  * @author Eduard Wayz (193123)
  * @version 1.0
  *
- * Die Klasse SudokuField repräsentiert ein einzelnes Feld in einem Sudoku-Brett.
- * Jedes Feld kann einen numerischen Wert haben und kann als "fest" markiert sein,
- * was bedeutet, dass sein Wert nicht geändert werden kann (z.B. bei Vorgabewerten).
+ * Represents a single cell in a Sudoku board, which can hold a number
+ * and be marked as fixed (unchangeable).
  */
 
 public class SudokuField {
-    // Der Wert des Sudoku-Feldes (0 bedeutet leer)
-    private int value = 0;
+    /**
+     * The value of the cell (0 means empty)
+     */
+    private int value;
 
-    // Gibt an, ob das Feld fest ist (z.B. ein Startwert, der nicht geändert werden darf)
-    private boolean fixed;
+    /**
+     * Indicates if the cell is fixed (cannot be changed)
+     */
+    private boolean fixedValue;
 
-    public SudokuField(int value, boolean fixed) {
-        this.value = value;
-        this.fixed = fixed;
+    /**
+     * Creates an empty Sudoku field with the value set to 0.
+     * The field is mutable (not fixed).
+     */
+    public SudokuField() {
+        this.value = 0;
+        this.fixedValue = false;
     }
 
     /**
-     * Gibt den aktuellen Wert des Feldes zurück.
+     * Creates a Sudoku field with a fixed initial value.
      *
-     * @return int als numerischen Wert des Feldes. (0, wenn leer)
+     * @param number The fixed value stored in the field.
+     */
+    public SudokuField(int number) {
+        this.value = number;
+        this.fixedValue = true;
+    }
+
+    /**
+     * Returns the current value of the cell.
+     *
+     * @return The current value.
      */
     public int getValue() {
         return value;
     }
 
     /**
-     * Setzt den Wert des Feldes auf den angegebenen Wert n, falls das Feld nicht fest ist.
+     * Sets the cell's value if it is not fixed.
      *
-     * @param n der neue Wert, der gesetzt werden soll.
+     * @param number The new value.
      */
-    public void setValue(int n) {
-        if (!fixed) {  // Überprüft, ob das Feld veränderbar ist
-            value = n;
+    public void setValue(int number) {
+        if (!fixedValue) {  // Überprüft, ob das Feld veränderbar ist
+            value = number;
         }
     }
 
     /**
-     * Löscht den Wert des Feldes, indem es auf 0 gesetzt wird (leerer Zustand),
-     * falls das Feld nicht fest ist.
+     * Clears the field's value (sets it to 0), if the field is not fixed.
      */
     public void clear() {
-        if (!fixed) {  // Überprüft, ob das Feld veränderbar ist
+        if (!fixedValue) {  // Überprüft, ob das Feld veränderbar ist
             value = 0;
         }
     }
 
     /**
-     * Überprüft, ob das Feld fest ist.
+     * Checks if the cell is fixed.
      *
-     * @return true, wenn das Feld fest ist, sonst false.
+     * @return true if fixed, otherwise false.
      */
     public boolean isFixed() {
-        return fixed;
+        return fixedValue;
     }
 
     /**
-     * Überprüft, ob das Feld leer ist (Wert gleich 0).
+     * Checks if the cell is empty.
      *
-     * @return true, wenn das Feld leer ist, sonst false.
+     * @return true if empty, otherwise false.
      */
     public boolean isEmpty() {
         return value == 0;
