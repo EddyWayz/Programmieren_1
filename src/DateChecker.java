@@ -1,24 +1,24 @@
 /**
-* Die Klasse DateChecker ist im Stande, ein eingegebenes Datum auf Gültigkeit zu überprüfen. 
+* Die Klasse DateChecker ist im Stande, ein eingegebenes Datum auf Gueltigkeit zu ueberpruefen. 
  * @author Eduard Wayz
  * @version 1.0
  */
  
 public class DateChecker {
   public static void main(String[] args){
-      // Eingabe von Tag, Monat und Jahr des zu überprüfenden Datums
-      int day = In.readInt("Bitte geben Sie hier den Tag des zu prüfenden Tags ein: ");
-      int month = In.readInt( "Bitte geben Sie hier den Monat des zu prüfenden Tags ein: ");
-      int year = In.readInt( "Bitte geben Sie hier das Jahr des zu prüfenden Tags ein: ");
+      // Eingabe von Tag, Monat und Jahr des zu ueberpruefenden Datums
+      int day = In.readInt("Bitte geben Sie hier den Tag des zu pruefenden Tags ein: ");
+      int month = In.readInt( "Bitte geben Sie hier den Monat des zu pruefenden Tags ein: ");
+      int year = In.readInt( "Bitte geben Sie hier das Jahr des zu pruefenden Tags ein: ");
       System.out.println("Das eingegebene Datum ist: " + isValidDate(day, month, year));
   }
 
     /**
-     * Überprüft, ob das übergebene Jahr ein Schaltjahr ist.
+     * ueberprueft, ob das uebergebene Jahr ein Schaltjahr ist.
      * Ein Jahr ist ein Schaltjahr, wenn es durch 400 teilbar ist.
      * Oder wenn es durch 4, aber nicht durch 100 teilbar ist. 
      * 
-     * @param year Das zu überprüfende Jahr (int).
+     * @param year Das zu ueberpruefende Jahr (int).
      * @return true, wenn das Jahr ein Schaltjahr ist, sonst false (boolean).
      */
   static boolean isLeapYear(int year){
@@ -29,9 +29,9 @@ public class DateChecker {
     }
   }
   /**
-   * Gibt die Anzahl der Tage des übergebenen Monats unter Berücksichtigung eines möglichen Schaltjahres zurück.
-   * @param month Der Monat, von welchem die Anzahl der Tage zurückgegeben werden soll. (int)
-   * @param year Das Jahr, aus welchem month ist (nötig für Schaltjahr-Überprüfung). (int)
+   * Gibt die Anzahl der Tage des uebergebenen Monats unter Beruecksichtigung eines mueglichen Schaltjahres zurueck.
+   * @param month Der Monat, von welchem die Anzahl der Tage zurueckgegeben werden soll. (int)
+   * @param year Das Jahr, aus welchem month ist (nuetig fuer Schaltjahr-ueberpruefung). (int)
    * @return die Anzahl der Tage des eigegeben Monats. (int)
    */
   static int numberOfDays(int month, int year) {
@@ -51,15 +51,15 @@ public class DateChecker {
       }
   }
 /**
- * Überprüft, ob das eingegebene Datum ein gültiges Datum ist.
- * Folgende Überprüfungen werden durchgeführt: 
- * - Ist das Jahr gültig? Es sollen nur positive Jahreszahlen zugelassen sein.
- * - Ist der Monat gültig? Die Zahl muss zwischen 1 und 12 liegen.
- * - Ist der Tag gültig? Die Zahl muss zwischen 1 und Anzahl der Tage des entsprechenden Monats (im entsprechenden Jahr) liegen. 
+ * ueberprueft, ob das eingegebene Datum ein gueltiges Datum ist.
+ * Folgende ueberpruefungen werden durchgefuehrt: 
+ * - Ist das Jahr gueltig? Es sollen nur positive Jahreszahlen zugelassen sein.
+ * - Ist der Monat gueltig? Die Zahl muss zwischen 1 und 12 liegen.
+ * - Ist der Tag gueltig? Die Zahl muss zwischen 1 und Anzahl der Tage des entsprechenden Monats (im entsprechenden Jahr) liegen. 
  * @param day
  * @param month
  * @param year
- * @return true, wenn es sich beim eingegebenen Datum, um ein gültiges Datum handelt, sonst false (boolean)
+ * @return true, wenn es sich beim eingegebenen Datum, um ein gueltiges Datum handelt, sonst false (boolean)
  */
   static boolean isValidDate(int day, int month, int year) {
       if (year < 0 ) {

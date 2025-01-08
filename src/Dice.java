@@ -1,5 +1,5 @@
 /**
- * Die Klasse Dice enthält folgende Methoden:
+ * Die Klasse Dice enthaelt folgende Methoden:
  * - rollDie() simuliert einen Würfelwurf.
  * - rollDice(int n) simuliert das Werfen von n Würfel und gibt die Ergebnisse zurück.
  * - wuerfelBisZumPasch(int n) würfelt solange n Würfel bis alle Ergebnisse im Array gleich sind.
@@ -34,14 +34,14 @@ public class Dice {
      * gesammelt zurück.
      *
      * @param n gibt die Anzahl der Würfe an. (int)
-     * @return int[] der länge n mit den gewürfelten Zahlen. (int[])
+     * @return int[] der laenge n mit den gewürfelten Zahlen. (int[])
      */
     static int[] rollDice(int n) {
         // Return ein leeres int[], wenn n < 1.
         if (n < 1) {
             return new int[0];
         }
-        // Erstellt und befüllt ein int[] der Länge n mit zufälligen Zahlen von 1 bis 6.
+        // Erstellt und befüllt ein int[] der Laenge n mit zufaelligen Zahlen von 1 bis 6.
         int[] resultArray = new int[n];
         for (int i = 0; i < resultArray.length; i++) {
             resultArray[i] = rollDie();

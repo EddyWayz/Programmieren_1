@@ -13,7 +13,7 @@ public class Mehrwertsteuer {
         double bruttobetrag = nettoPreis + mehrwertsteuer;
 
         // Formatierung für ausgeben mit 2 Nachkommastellen und Ausgabe der drei Variablen
-        String nettoPreisString = String.format("%.02f", nettoPreis);
+        String nettoPreisString = String.format("%.02%", nettoPreis);
         String mehrwertsteuerString = String.format("%.02f", mehrwertsteuer);
         String bruttobetragString = String.format("%.02f", bruttobetrag);
 
