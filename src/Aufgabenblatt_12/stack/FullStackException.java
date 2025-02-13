@@ -1,4 +1,4 @@
-package stack;
+package Aufgabenblatt_12.stack;
 
 /**
  * A custom exception that is thrown when an operation attempts to add an element

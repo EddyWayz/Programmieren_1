@@ -1,3 +1,12 @@
+package Aufgabenblatt_12.stack;
+
+
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 /**
  * The RecursiveStackTest class contains unit tests for the RecursiveStack class.
  * It verifies the functionality of the stack operations including creation,
@@ -5,13 +14,8 @@
  * @author Eduard Wayz (193123)
  */
 
-package stack;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
 /**
  * Unit tests for RecursiveStack class.
  */

@@ -1,4 +1,4 @@
-package stack;
+package Aufgabenblatt_12.stack;
 
 /**
  * An interface for a stack that stores String elements.

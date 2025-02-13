@@ -1,4 +1,4 @@
-package stack;
+package Aufgabenblatt_12.stack;
 
 /**
  * The ArrayStackTest class contains unit tests for the ArrayStack class.
